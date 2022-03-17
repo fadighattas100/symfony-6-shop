@@ -1,0 +1,62 @@
+Shop components
+---------------
+
+customer
+product
+order
+invoic
+
+api
+request validation -> Forms
+transactions
+enety 
+repo
+dto
+midellwar
+filters ?
+actions with __invoke
+servces invois with dependcy and interfaces
+
+test 
+unit test
+api test
+
+Shop commands
+--------------
+
+$ composer require annotations #first dwonload the annotations packeg
+$ composer require doctrine maker
+
+$ symfony console make:entity Customer #id, email, phoneNumber
+$ symfony console make:entity Product #id, code, title, price
+$ symfony console make:entity Cart #id, date_time, Customer, Product
+
+$ symfony console make:controller CustomersController
+
+
+$ symfony console make:migration
+$ symfony console doctrine:migrations:migrate
+
+
+in .env 
+DATABASE_URL="mysql://root:@127.0.0.1:3306/movies"
+
+$ symfony console doctrine:database:create 
+
+
+https://stackoverflow.com/questions/50700748/api-versioning-in-symfony
+
+
+$ symfony console make:form
+$ symfony console make:crud Product
+$ symfony console make:crud Customer
+
+ManyProductsHasOneCategory -> ManyToOne Rel
+$ symfony console make:entity Category #id, name
+$ symfony console make:entity Product #Category
+
+
+$ symfony console make:migration
+$ symfony console doctrine:migrations:migrate
+
+$ php bin/console testStoreServicesCommand
