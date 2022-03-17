@@ -55,7 +55,7 @@ class ProductsController extends AbstractApiController
 
         //TODO make better error handler
         return new JsonResponse(
-            $this->responseDtoTransformerInterface->transformFromObjects($products),
+            $this->responseDtoTransformer->transformFromObjects($products),
             Response::HTTP_OK
         );
     }
@@ -73,7 +73,7 @@ class ProductsController extends AbstractApiController
             ['groups' => ['product:w']]
         );
 
-        $product = $this->requestDtoTransformerInterface->transformFromObject($productsRequestDto);
+        $product = $this->requestDtoTransformer->transformFromObject($productsRequestDto);
 
         //Validate data by Entity constraints constraints annotation
         $violations = $this->validator->validate($product, null, 'product:c');
@@ -92,7 +92,7 @@ class ProductsController extends AbstractApiController
 
         //TODO make better response handler
         return new JsonResponse(
-            $this->responseDtoTransformerInterface->transformFromObject($product),
+            $this->responseDtoTransformer->transformFromObject($product),
             Response::HTTP_CREATED
         );
     }
@@ -102,7 +102,7 @@ class ProductsController extends AbstractApiController
     {
         //TODO make better response handler
         return new JsonResponse(
-            $this->responseDtoTransformerInterface->transformFromObject($product),
+            $this->responseDtoTransformer->transformFromObject($product),
             Response::HTTP_OK
         );
     }
@@ -119,7 +119,7 @@ class ProductsController extends AbstractApiController
             ['groups' => ['product:w']]
         );
 
-        $newProduct = $this->requestDtoTransformerInterface->transformFromObject($productsRequestDto);
+        $newProduct = $this->requestDtoTransformer->transformFromObject($productsRequestDto);
 
         //Validate data by Entity constraints constraints annotation
         $violations = $this->validator->validate($newProduct);
@@ -139,7 +139,7 @@ class ProductsController extends AbstractApiController
 
         //TODO make better response handler
         return new JsonResponse(
-            $this->responseDtoTransformerInterface->transformFromObject($product),
+            $this->responseDtoTransformer->transformFromObject($product),
             Response::HTTP_OK
         );
     }

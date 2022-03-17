@@ -13,8 +13,8 @@ abstract class AbstractApiController extends AbstractController
 {
     protected SerializerInterface $serializer;
     protected ValidatorInterface $validator;
-    protected ?RequestDtoTransformerInterface $requestDtoTransformerInterface;
-    protected ?ResponseDtoTransformerInterface $responseDtoTransformerInterface;
+    protected ?RequestDtoTransformerInterface $requestDtoTransformer;
+    protected ?ResponseDtoTransformerInterface $responseDtoTransformer;
 
     public function __construct(
         SerializerInterface $serializer,
@@ -25,8 +25,8 @@ abstract class AbstractApiController extends AbstractController
     {
         $this->serializer = $serializer;
         $this->validator = $validator;
-        $this->requestDtoTransformerInterface = $requestDtoTransformerInterface;
-        $this->responseDtoTransformerInterface = $responseDtoTransformerInterface;
+        $this->requestDtoTransformer= $requestDtoTransformerInterface;
+        $this->responseDtoTransformer = $responseDtoTransformerInterface;
     }
 
 }
